@@ -4,7 +4,23 @@ select * from counts;
 select * from tenants;
 select * from ss_tenants;
 select * from sales;
-
+--querys
+-- total ventas por modulo de ventas
+select
+    ss_tenant_name,
+    sum(num_sales) monto_total,
+    sum(num_transactions) total_ventas
+from sales
+group by ss_tenant_name
+;
+-- total ventas por fecha
+select
+    date(s.date) fecha,
+    sum(s.num_sales) monto_total,
+    sum(s.num_transactions) total_ventas
+from sales s
+group by date(s.date)
+;
 select * from tenants; -- tenant_id
 select * from ss_tenants; -- fk
 select * from areas; -- fk
