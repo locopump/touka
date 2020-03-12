@@ -25,7 +25,7 @@ select * from tenants; -- tenant_id
 select * from ss_tenants; -- fk
 select * from areas; -- fk
 --querys
--- locatarios x categoria
+-- marcas x categoria
 select category,
        count(*)
 from tenants
